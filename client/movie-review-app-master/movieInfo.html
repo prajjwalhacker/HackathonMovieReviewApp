@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Info Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+     <style>
+         .overlay {
+            height : 100%;
+            width : 0;
+            position : fixed;
+            z-index: 1;
+            top: 0;
+            left: 795px;
+            background-color: white;
+            color: black;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+        .overlay a {
+            padding : 8px;
+            text-decoration: none;
+            font-size : 36px;
+            color : #fff;
+            transition: 0.5s;
+            margin-left: 485px;
+        }
+        .overlay a:hover{
+            cursor: pointer;;
+        }
+     </style>
+</head>
+<body>
+    <header>
+        <div class="hd-text">
+            <a style = "text-decoration: none;" href= "index.html" class = "title" > <h2>Movie City</h2></a>
+        </div>
+
+        <div class="hd-btn">
+                <div><a href="#"><span class="glyphicon glyphicon-user"></span>  Sign Up</a></div>
+                 <div> <a href="#"><span class="glyphicon glyphicon-log-in"></span>  Login</a></div>
+        </div>
+    </header>
+    <div id = "navbar" class = "overlay">
+
+        <a href = "#" class = "closebtn" onclick="return closeNav()" style = "background-color: black;">X</a>
+        <div class="content">
+             <form class = "formpage">
+        <ul class = "form-container">
+            <li style="font-family: 13px Arial;"><b style="font-family: Arial, Helvetica, sans-serif; font-size: 23px;">Enter Reviews</b></li>
+            <li>
+                <label for = "Rating">
+                  <span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Rating</span>
+                </label>
+                <input type = "Description" name = "rating" id = "description"/>
+            </li>
+            <li>
+                <label for = "Description">
+                  <span id = "description" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Description</span>
+                </label>
+                <input type =  "text" name = "description" id = "text" />
+            </li>
+            <li>
+                <button type = "submit" class = "button primary">
+                   Submit Feedback
+                </button>
+            </li>
+        </ul>
+    </form>
+        </div>
+       </div>
+    <div id="container1"></div>
+
+    <script src="./main.js"></script>
+    <script>
+        getMovie();
+    </script>
+    <script>
+    function openNav() {
+        var name=localStorage.getItem("moviename");
+        document.getElementById("navbar").style.width = "40%";
+        return false;
+    }
+    function closeNav() {
+       document.getElementById("navbar").style.width = "0%";
+       return false;
+    }
+    </script>
+</body>
+
+</html>
